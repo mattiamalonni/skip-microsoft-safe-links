@@ -1,6 +1,6 @@
 {
   "name": "skip-microsoft-safe-links",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "content.js",
   "scripts": {

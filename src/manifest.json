@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Bypass Microsoft Safe Links",
-  "version": "1.0",
-  "description": "Instantly bypasses Microsoft Teams Safe Links redirection screens.",
+  "name": "Skip Microsoft Safe Links",
+  "version": "1.0.0",
+  "description": "Instantly skip Microsoft Teams Safe Links redirection screens.",
   "permissions": [],
   "content_scripts": [
     {
