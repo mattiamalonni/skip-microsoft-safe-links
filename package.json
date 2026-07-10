@@ -1,0 +1,18 @@
+{
+  "name": "skip-microsoft-safe-links",
+  "version": "1.0.0",
+  "description": "",
+  "main": "content.js",
+  "scripts": {
+    "build": "tsx build.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
+  }
+}

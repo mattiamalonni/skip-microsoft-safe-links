@@ -1,0 +1,43 @@
+name: Build and Package Extension
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Scarica il codice dal repository
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # 2. Configura Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      # 3. Installa le dipendenze (esbuild, tsx, typescript)
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Esegue lo script di build in TypeScript per generare la cartella /dist
+      - name: Build extension
+        run: npm run build
+
+      # 5. Comprime SOLO il contenuto della cartella /dist in un file .zip
+      - name: Zip extension
+        run: |
+          cd dist
+          zip -r ../skip-microsoft-safelinks.zip .
+
+      # 6. Carica il file .zip direttamente nella Release di GitHub appena creata
+      - name: Upload Zip to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: skip-microsoft-safelinks.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

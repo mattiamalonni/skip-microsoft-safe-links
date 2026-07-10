@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Bypass Microsoft Safe Links",
+  "version": "1.0",
+  "description": "Instantly bypasses Microsoft Teams Safe Links redirection screens.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.teams.public.onecdn.static.microsoft/*",
+        "https://*.safelinks.protection.outlook.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
